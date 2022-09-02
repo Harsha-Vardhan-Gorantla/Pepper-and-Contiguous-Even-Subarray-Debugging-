@@ -1,0 +1,32 @@
+#include <stdio.h>
+int main(){
+    int num;
+    scanf("%d", &num);
+    while(num--)
+    {
+        int l;
+        scanf("%d\n",&l);
+        int arr[l];
+        for(int i = 0; i < l; i++)
+        {
+            scanf("%d ",&arr[i]);
+        }
+        int counter = 0; int max_counter = 0;
+        for(int i = 0; i < l; i++)
+        {
+            if(arr[i]%2==0)
+            {
+                counter++;
+            }
+            else
+            {
+                counter = 0;
+            }
+            max_counter = max_counter>counter?max_counter:counter;
+        }
+        if(max_counter)
+        printf("%d\n",max_counter);
+        else
+        printf("-1\n");
+    }
+}
